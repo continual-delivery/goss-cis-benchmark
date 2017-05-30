@@ -1,0 +1,24 @@
+---
+file:
+  # 1.4.1 Ensure permissions on bootloader config are configured (Scored)
+  /etc/grub2/grub.cfg:
+    mode: "0600"
+    owner: root
+    group: root
+    
+command:
+  # 1.4.2 Ensure bootloader password is set (Scored)
+  'grep "^set superusers" /boot/grub2/grub.cfg':
+    exit-status: 0
+    stdout:
+      - '^set superusers=.*$'
+  'grep "^password" /boot/grub2/grub.cfg':
+    exit-status: 0
+    stdout:
+      - '^password_pbkdf2.*$'
+  # 1.4.3 Ensure authentication required for single user mode (Not Scored)
+  'grep /sbin/sulogin /usr/lib/systemd/system/rescue.service':
+    exit-status: 0
+  'grep /sbin/sulogin /usr/lib/systemd/system/emergency.service':
+    exit-status: 0
+  
