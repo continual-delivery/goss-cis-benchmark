@@ -1,0 +1,9 @@
+---
+package:
+  # 1.3.1 Ensure AIDE is installed (Scored)
+  aide:
+    installed: true
+command:
+  # 1.3.2 Ensure filesystem integrity is regularly checked (Scored)
+  'crontab -u root -l | grep aide || grep -r aide /etc/cron.* /etc/crontab':
+    exit-status: 0
