@@ -1,0 +1,13 @@
+---
+command:
+  # 1.2.1 Ensure package manager repositories are configured (Not Scored)
+  'yum repolist':
+    exit-status: 0
+  # 1.2.2 Ensure GPG keys are configured (Not Scored)
+  "rpm -q gpg-pubkey --qf '%{name}-%{version}-%{release} --> %{summary}\n'":
+    exit-status: 0
+  # 1.2.3 Ensure gpgcheck is globally activated (Scored)
+  'grep ^gpgcheck=1 /etc/yum.conf':
+    exit-status: 0
+  'grep ^gpgcheck=1 /etc/yum.repos.d/*':
+    exit-status: 0
