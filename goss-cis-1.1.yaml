@@ -95,3 +95,9 @@ mount:
   # 1.1.19 Ensure nosuid option set on removable media partitions (Not Scored)
   # 1.1.20 Ensure noexec option set on removable media partitions (Not Scored)
   
+service:
+  # 1.1.22 Disable Automounting (Scored)
+  autofs:
+    enabled: false
+    running: false
+  
