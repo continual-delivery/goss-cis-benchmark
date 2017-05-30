@@ -1,0 +1,43 @@
+---
+command:
+  # 1.1.1.1 Ensure mounting of cramfs filesystems is disabled
+  lsmod | grep cramfs:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+  # 1.1.1.2 Ensure mounting of freevxfs filesystems is disabled
+  lsmod | grep freevxfs:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+  # 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled
+  lsmod | grep jffs2:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+  # 1.1.1.4 Ensure mounting of hfs filesystems is disabled
+  lsmod | grep hfs:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+  # 1.1.1.5 Ensure mounting of hfsplus filesystems is disabled
+  lsmod | grep hfsplus:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+  # 1.1.1.6 Ensure mounting of squashfs filesystems is disabled
+  lsmod | grep squashfs:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+  # 1.1.1.7 Ensure mounting of udf filesystems is disabled
+  lsmod | grep udf:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+  # 1.1.1.8 Ensure mounting of FAT filesystems is disabled
+  lsmod | grep vfat:
+    exit-status: 1
+    stdout: []
+    stderr:[]
+ 
